@@ -1,11 +1,32 @@
 import React, { useState, useEffect } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "light";
+    }
+    return "light";
+  });
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
 
   // Detect scroll and change navbar background
   useEffect(() => {
@@ -58,8 +79,8 @@ const Navbar = () => {
           <span className="text-[#5d555d]"> /&gt;</span>
         </div>
 
-        {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-6 items-center text-gray-300 ">
+  {/* Desktop Menu */}
+  <ul className="hidden md:flex space-x-6 items-center text-gray-300 ">
           {menuItems.map((item) => (
             <li
               key={item.id}
@@ -73,6 +94,20 @@ const Navbar = () => {
             </li>
           ))}
 
+          {/* Theme Switcher */}
+          <li>
+            <button
+              onClick={toggleTheme}
+              className="text-xl p-2 rounded-full hover:bg-gray-200 hover:bg-opacity-20 transition dark:hover:bg-gray-700"
+              aria-label="Toggle Theme"
+            >
+              {theme === "dark" ? (
+                <FaSun className="text-yellow-400" />
+              ) : (
+                <FaMoon className="text-gray-400" />
+              )}
+            </button>
+          </li>
           {/* Social Icons */}
          <div className="flex space-x-4 mr-36">
 
@@ -99,8 +134,19 @@ const Navbar = () => {
           </div>
         </ul>
 
-        {/* Mobile Menu Icon */}
+        {/* Mobile Menu Icon & Theme Switcher */}
         <div className="md:hidden flex items-center space-x-4">
+          <button
+            onClick={toggleTheme}
+            className="text-xl p-2 rounded-full hover:bg-gray-200 hover:bg-opacity-20 transition dark:hover:bg-gray-700"
+            aria-label="Toggle Theme"
+          >
+            {theme === "dark" ? (
+              <FaSun className="text-yellow-400" />
+            ) : (
+              <FaMoon className="text-gray-400" />
+            )}
+          </button>
           {/* Social Icons */}
           <a
             href="https://www.linkedin.com/in/mohd-aman-ab9608294/"

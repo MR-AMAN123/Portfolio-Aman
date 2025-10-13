@@ -18,7 +18,7 @@ const App = () => {
       {loading ? (
         <LoadingScreen onFinish={() => setLoading(false)} />
       ) : (
-        <div className="bg-[#050414] relative">
+  <div className="bg-[#f8fafc] dark:bg-[#050414] relative">
           <BlurBlob
             position={{ top: "35%", left: "20%" }}
             size={{ width: "30%", height: "40%" }}
