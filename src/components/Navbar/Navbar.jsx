@@ -80,7 +80,7 @@ const Navbar = () => {
         </div>
 
   {/* Desktop Menu */}
-  <ul className="hidden md:flex space-x-6 items-center text-gray-300 ">
+  <ul className="hidden md:flex space-x-6 items-center text-gray-700 dark:text-gray-400 ">
           {menuItems.map((item) => (
             <li
               key={item.id}
@@ -98,7 +98,7 @@ const Navbar = () => {
           <li>
             <button
               onClick={toggleTheme}
-              className="text-xl p-2 rounded-full hover:bg-gray-200 hover:bg-opacity-20 transition dark:hover:bg-gray-700"
+              className="text-xl p-2 rounded-full hover:bg-gray-200 hover:bg-opacity-20 transition dark:hover:bg-gray-900"
               aria-label="Toggle Theme"
             >
               {theme === "dark" ? (
@@ -109,29 +109,7 @@ const Navbar = () => {
             </button>
           </li>
           {/* Social Icons */}
-         <div className="flex space-x-4 mr-36">
-
-          <li>
-            <a
-              href="https://www.linkedin.com/in/mohd-aman-ab9608294/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-[#0e76a8] text-xl"
-            >
-              <FaLinkedin />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/MR-AMAN123"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-300 hover:text-white text-xl"
-            >
-              <FaGithub />
-            </a>
-          </li>
-          </div>
+        
         </ul>
 
         {/* Mobile Menu Icon & Theme Switcher */}
@@ -148,22 +126,8 @@ const Navbar = () => {
             )}
           </button>
           {/* Social Icons */}
-          <a
-            href="https://www.linkedin.com/in/mohd-aman-ab9608294/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-[#0e76a8] text-2xl"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/MR-AMAN123"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-white text-2xl"
-          >
-            <FaGithub />
-          </a>
+         
+          
 
           {/* Hamburger Menu */}
           {isOpen ? (
