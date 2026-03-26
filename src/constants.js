@@ -41,7 +41,7 @@ import nginxLogo from "./assets/tech_logo/nginx.png";
 import awsLogo from "./assets/tech_logo/aws.png";
 import bashLogo from "./assets/tech_logo/bash.png";
 import terraformLogo from "./assets/tech_logo/terraform.png";
-
+import gharpayy from "./assets/work_logo/gharpayy.png";
 // Experience Section Logo's
 import bdcoe from "./assets/company_logo/bdcoe.png";
 
@@ -247,5 +247,19 @@ export const projects = [
     tags: ["Typescript", "NextJs", "Tailwind CSS"],
     github: "https://github.com/MR-AMAN123/snippets?tab=readme-ov-file",
     webapp: "",
+  },
+  {
+    id: 5,
+    title: "Gharpayy",
+    description:
+     "A full-stack lead management system designed to help businesses efficiently capture, track, and manage customer leads. Built using the MERN stack, it offers a responsive interface with real-time updates, search, and status tracking to streamline sales workflows and improve productivity.",
+    image: gharpayy,
+    tags: [ "REST API",
+      "React JS",
+      "Node.js",
+      "MongoDB",
+      "Express.js",],
+    github: "https://github.com/MR-AMAN123/gharpayy",
+    webapp: "https://gharpayy-lake.vercel.app/",
   },
 ];
