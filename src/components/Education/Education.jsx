@@ -1,6 +1,6 @@
 import React from "react";
 import { education } from "../../constants";
-import { motion} from "framer-motion"; // Import framer-motion
+import { motion} from "framer-motion"; 
 import { useInView } from 'react-intersection-observer';
 
 
